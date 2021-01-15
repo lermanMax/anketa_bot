@@ -69,14 +69,14 @@ async def send_phone(message: types.Message):
     keyboard.add(types.KeyboardButton('Отправить телефон 📞', 
                                       request_contact=True))
     
-    await message.answer(get_text_from('text_of_questions/authorization.txt'), 
+    await message.answer(get_text_from('./text_of_questions/authorization.txt'), 
                          reply_markup = keyboard)
 
 
 @dp.message_handler(commands=['help'])
 async def send_welcome(message: types.Message):
     logging.info('help command from: %r', message.from_user.id) 
-    await message.answer(get_text_from('text_of_questions/help.txt'))
+    await message.answer(get_text_from('./text_of_questions/help.txt'))
 
     
 
@@ -180,7 +180,7 @@ async def new_contact(message: types.Message):
     await message.reply('Записала. Теперь можем начать.',
                         reply_markup = types.ReplyKeyboardRemove())
     
-    await message.answer(get_text_from('text_of_questions/hello.txt'))
+    await message.answer(get_text_from('./text_of_questions/hello.txt'))
     
     question_name, text, answers = get_next_question('start')
     keyboard = make_keyboard(question_name, answers)

@@ -36,7 +36,7 @@ def get_text_from(path):
 
 def get_next_question(question_name = 'default', 
                       answer = 'default', 
-                      files_dir = 'text_of_questions/'):
+                      files_dir = './text_of_questions/'):
     
     question_name = question_dict[question_name][answer]
     question_text = get_text_from(files_dir + question_name +'.txt')
