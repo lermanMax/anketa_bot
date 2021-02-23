@@ -155,7 +155,7 @@ async def callback_admin_action(
     if question_name == 'all_answers':
         headings = ['id', 'Имя','Фамилия','username','язык','номер телефона','id','id', 'дата ответа', 'лояльность', 'менеджер', 
                     'доставка', 'кулинария', 'диетология', 'отзыв']
-        filepath = 'all_answers.xls'
+        filepath = 'nrgfood_all_answers.xls'
         DB.export_to_excel(headings, filepath)
         document = open(filepath,'rb')
         await bot.send_document(query.from_user.id, document)
@@ -177,7 +177,7 @@ async def new_contact(message: types.Message):
     logging.info('new phone from: %r', message.from_user.id) 
     DB.add_phone(user_id = message.from_user.id, 
                  phone = message.contact.phone_number)
-    await message.reply('Записала. Теперь можем начать.',
+    await message.reply('Записал. Теперь можем начать.',
                         reply_markup = types.ReplyKeyboardRemove())
     
     await message.answer(get_text_from('./text_of_questions/hello.txt'))

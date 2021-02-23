@@ -1,4 +1,4 @@
-API_TOKEN = '1470910157:AAEKomTZHDiqGRqpckvg1DCKJBArbmPWnd0'
+API_TOKEN = ''
 
 
 DB_HOST = "localhost"
